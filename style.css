@@ -1,0 +1,566 @@
+body {
+    -webkit-touch-callout: none; /* Забранява показването на контекстното меню при дълго натискане */
+    -webkit-user-select: none; /* Забранява избора на текст */
+    -khtml-user-select: none; /* Забранява избора на текст */
+    -moz-user-select: none; /* Забранява избора на текст */
+    -ms-user-select: none; /* Забранява избора на текст */
+    user-select: none; /* Забранява избора на текст */
+}
+
+@media print {
+    body {
+        display: none;
+    }
+}
+
+@font-face {
+    font-family: "ROCKBASE";
+    src: url("ttf/ROCKBASE.ttf");
+    font-weight: 400;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: url('background/banner-rock.png') no-repeat center center fixed;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Анимация за логото */
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.logo {
+    width: 1000px; /* Настройте размера на логото според нуждите */
+    animation: blink 2s infinite;
+}
+
+/* Медиа заявка за мобилни устройства */
+@media only screen and (max-width: 600px) {
+    .logo {
+        width: 110%; /* Променете ширината на логото за мобилни устройства според нуждите */
+    }
+}
+
+/* Скриване на съдържанието по време на зареждането */
+.hidden-content {
+    display: none;
+}
+
+/* Показване на съдържанието след зареждането */
+.visible-content {
+    display: block;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    padding: 0 20px;
+}
+
+.header-logo {
+    width: 100px;
+    position: absolute; /* Поставете логото в позиция "absolute" */
+    top: 1%; /* Поставете горната част на логото в средата на хедъра */
+}
+
+/* 4 bbuttons script */
+
+.custom-small-buttons {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translate(1%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.custom-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #429fd8a3;
+    width: 60px; /* Задаваме начална ширина */
+    height: 60px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 3px 3px #afaeae; /* Променен box-shadow */
+    transition: width 0.3s ease; /* Променяме ширината на бутоните */
+    overflow: hidden;
+}
+
+.custom-button img {
+    max-width: 55px; /* Ограничаваме максималната ширина на снимката */
+    max-height: 55px; /* Ограничаваме максималната височина на снимката */
+    transition: transform 0.3s ease; /* Анимация за преместване на логото */
+}
+
+.custom-button:hover {
+    width: 200px; /* По-голяма ширина при ховър */
+}
+
+.custom-button:hover img {
+    transform: translateX(-100%) scale(0); /* Скриваме логото при ховър */
+}
+
+.button-text {
+    position: absolute;
+    top: 0;
+    right: 100%; /* Позиционираме текста извън бутона */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    text-align: center;
+    background-color: rgba(58, 111, 186, 0.7);
+    transition: opacity 0.3s ease; /* Анимация за показване на текста */
+    opacity: 0; /* Първоначално текстът е скрит */
+    font-size: 25px;
+    font-family: "ROCKBASE", Arial, sans-serif; /* Шрифт */
+    color: black; /* Черен цвят на текста */
+    text-decoration: none; /* Без декорации като линк */
+}
+
+.custom-button:hover .button-text {
+    right: 0; /* Показване на текста при ховър */
+    opacity: 1; /* Показване на текста с анимация */
+}
+
+
+/* Стилове за мобилни устройства */
+@media (max-width: 1232px) {
+    .custom-small-buttons {
+        margin-top: 175px; /* Добавяне на отстъп отгоре за преместване на целия контейнер надолу */
+        transition: width 0.3s ease; /* Променяме ширината на бутоните */
+    }
+    
+    .custom-button {
+        width: 40px; /* Нова ширина за бутоните */
+        height: 40px; /* Нова височина за бутоните */
+        box-shadow: 2px 2px #7896f0; /* Променен box-shadow */
+        margin-bottom: 10px; /* Ново разстояние между бутоните */
+    }
+
+    .custom-button img {
+        max-width: 35px; /* Нова максимална ширина за снимките */
+        max-height: 35px; /* Нова максимална височина за снимките */
+        margin-top: 1px; /* Смъкване на снимките малко надолу */
+        transition: transform 0.3s ease; /* Анимация за преместване на логото */
+    }
+
+    .button-text {
+        font-size: 14px; /* Нов размер на шрифта за текста в бутоните */
+        transition: opacity 0.3s ease; /* Анимация за показване на текста */
+    }
+}
+
+/* bbuttons script*/
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.main-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 220px;
+    height: 70px;
+    margin: 0 10px;
+    background-color: #2b62aea9; /* Основен бял цвят */
+    border-radius: 15px;
+    border: 2px solid #ded7d1; /* Сив border */
+    font-family: "ROCKBASE", Arial, sans-serif;
+    font-size: 26px;
+    cursor: pointer;
+    box-shadow: 3px 3px #ded7d1;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Добавена транзиция за по-гладко променяне на стиловете */
+    position: relative; /* Необходимо за стилизирането на светещата долна част */
+}
+
+.main-button:hover {
+    background-color: #f2f2f2; /* По-светъл бял цвят при ховър */
+}
+
+.main-button:focus {
+    outline: none;
+}
+
+.main-button:active {
+    background-color: #e6e6e6; /* По-тъмен бял цвят при активно натискане */
+}
+
+.main-button::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 7px;
+    background-color: transparent;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    transition: background-color 0.3s ease; /* Транзиция за плавна промяна на цвета на долната част */
+}
+
+.main-button:hover::after,
+.main-button:focus::after,
+.main-button:active::after {
+    background-color: #3d6fdba9; /* Червено светене на долната част при ховър, фокус или активно натискане */
+}
+
+.main-button span {
+    color: #2947bb; /* Черен цвят на текста */
+    font-weight: bold;
+    font-family: "ROCKBASE", Arial, sans-serif;
+    font-size: 16px;
+    transition: color 0.3s ease; /* Транзиция за плавно променяне на цвета на текста */
+}
+
+.main-button:hover span,
+.main-button:focus span,
+.main-button:active span {
+    color: #666666; /* По-тъмен сив цвят на текста при ховър, фокус или активно натискане */
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    width: 90%; /* Увеличена ширина */
+    max-width: 800px; /* Увеличена максимална ширина */
+    padding: 40px; /* Увеличено вътрешно отстояние */
+    background-color: #296e9c7a;
+    border-radius: 25px;
+    border: 10px solid #ded7d1; /* Сив border */
+    box-shadow: 12px 12px #838282;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    overflow-y: auto;
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* Добавена транзиция за по-гладко променяне на стиловете */
+}
+
+
+.modal:hover {
+    border-color: rgb(96, 142, 211); /* Червен border при hover */
+}
+
+.modal-title {
+    font-family: "ROCKBASE", Arial, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.modal-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-family: "ROCKBASE", Arial, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #999999;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: #555555;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100px;
+    padding: 10px;
+}
+
+.copy-icon {
+    position: absolute;
+    right: 162px;
+    top: 51%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+input[type="text"] {
+    width: 200px;
+    height: 35px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 15px;
+    border: 1px solid #c5c5c5;
+    cursor: pointer;
+    box-shadow: 3px 3px #d1d6de;
+    transition: .4s ease;
+    font-family: "ROCKBASE", Arial, sans-serif;
+    font-size: 27px; /* Размер на шрифта */
+    text-align: center; /* Центриране на текста */
+    margin: 0 auto; /* Центриране на полето */
+    transform: translateX(11%); /* Хоризонтално центриране */
+}
+
+input[type="text"]:hover {
+    border: 1px solid #3d6fdba9; /* Промяна на цвета на бордера при hover */
+    box-shadow: 0 0 10px #3d6fdba9; /* Промяна на цвета на сенките при hover */
+}
+
+@media (max-width: 1232px) {
+    input[type="text"] {
+        width: 80%; /* Променете ширината на полето спрямо размера на екрана */
+        max-width: 260px; /* Ограничете максималната ширина на полето */
+        height: 25px; /* Намалете височината на полето */
+        padding: 10px; /* Намалете вътрешните отстъпи */
+        background-color: #fff;
+        border-radius: 15px;
+        border: 1px solid #c5c5c5;
+        cursor: pointer;
+        box-shadow: 3px 3px #d1d8de;
+        transition: .4s ease;
+        font-family: "ROCKBASE", Arial, sans-serif;
+        font-size: 25px; /* Намалете размера на шрифта */
+        text-align: center; /* Центрирайте текста */
+        position: absolute; /* Задайте "position: absolute", за да можем да позиционираме относно footer-а */
+        bottom: 10px; /* Отстояние от долната част на footer-а */
+        left: 10%; /* Поставете полето в средата на екрана по хоризонталата */
+        transform: translateX(35%); /* Центрирайте полето хоризонтално */
+    }
+
+    .copy-icon {
+        position: absolute;
+        right: -120px;
+        top: 45%;
+        transform: translateY(-50%);
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+    }
+}
+
+
+
+input[type="text"]:hover,
+input[type="text"]:focus {
+    border-color: #999999;
+}
+
+.mobile-menu-icon {
+    display: block;
+    font-family: "ROCKBASE", Arial, sans-serif;
+    font-size: 30px;
+    cursor: pointer;
+    position: fixed; /* Поставете иконката в позиция "fixed" за да се показва върху другото съдържание */
+    top: 20px;
+    right: 20px; /* Поставете иконката в дясната част на екрана */
+}
+
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 70%;
+    max-width: 300px;
+    background-color: #f9f9f9;
+    z-index: 9999;
+    padding: 20px;
+    padding-top: 50px; /* Добавяме padding отгоре за да мръднем бутоните леко надолу */
+    animation: slideIn 0.5s ease;
+}
+
+.mobile-menu .main-button {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.close-mobile-menu-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    color: #333; /* Цвят на текста */
+    font-family: "ROCKBASE", Arial, sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1000; /* Задайте висок z-index, за да бъде над останалото съдържание */
+}
+
+.close-mobile-menu-btn:hover {
+    color: #555555; /* Цвят на текста при ховър */
+}
+
+.header-logo-mobile {
+    display: none; /* Скрива мобилното лого по подразбиране */
+    width: 220px; /* Размер на мобилното лого */
+    margin: 0 auto; /* Центрира мобилното лого по хоризонтала */
+}
+
+@media (min-width: 1232px) {
+    .mobile-menu-icon {
+        display: none; /* Скрийте иконката само при ширина на екрана, по-голяма или равна на 769px (което е ширина на компютърния екран) */
+    }
+}
+
+@media (max-width: 1232px) {
+    .header-logo {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 80px;
+    }
+    
+    header {
+        height: 100px;
+        padding: 15px;
+        background-color: #ffffff;
+    }
+
+    .header-logo-desktop {
+        display: none; /* Скрива десктоп логото при мобилна версия */
+    }
+    .header-logo-mobile {
+        display: block; /* Показва мобилното лого при мобилна версия */
+    }
+
+    .button-container {
+        display: none;
+    }
+
+    .mobile-menu-icon {
+        display: block;
+    }
+
+    .modal {
+        width: 90%;
+        max-width: 500px;
+        padding: 20px;
+    }
+
+    .modal-title {
+        font-size: 20px;
+    }
+
+    .modal-content {
+        font-size: 16px;
+    }
+
+    footer {
+        height: 80px;
+    }
+
+    input[type="text"] {
+        width: 250px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 1232px) {
+    .header-logo {
+        width: 60px;
+    }
+    
+    header {
+        height: 50px;
+    }
+
+    .main-button {
+        width: 120px;
+        height: 40px;
+        margin: 0 5px;
+    }
+
+    .modal {
+        width: 95%;
+        max-width: 400px;
+        padding: 15px;
+    }
+
+    .modal-title {
+        font-family: "ROCKBASE", Arial, sans-serif;
+        font-size: 18px;
+    }
+
+    .modal-content {
+        font-family: "ROCKBASE", Arial, sans-serif;
+        font-size: 14px;
+    }
+
+    footer {
+        height: 60px;
+    }
+
+    input[type="text"] {
+        width: 200px;
+        height: 50px;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOut {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}

@@ -1,0 +1,144 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="background/rock-3d.png" type="image/x-icon">
+    <link rel="icon" href="background/rock-3d.png" type="image/png">
+    <link rel="apple-touch-icon" href="background/rock-3d.png">
+    <title>ROCK BASE</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google tag (gtag.js) -->
+    <!-- <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-S0FNXK7P73"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-S0FNXK7P73');
+    </script> -->
+
+    <!-- Google / Search Engine Tags -->
+    <meta itemprop="name" content="ROCK BASE | Join to Rock">
+    <meta itemprop="description" content="Base native meme coin $ROCK">
+    <meta itemprop="image" content="background/rock-3d.png">
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://rockz.xyz">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="ROCK | Join us">
+    <meta property="og:description" content="Base native meme coin $ROCK">
+    <meta property="og:image" content="background/rock-3d.png">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ROCK BASE | Join to Rock">
+    <meta name="twitter:description" content="Base native meme coin $ROCK">
+    <meta name="twitter:image" content="background/rock-3d.png">
+    
+</head>
+
+<body>
+    <!-- Зареждащ екран с лого -->
+    <div class="loading-screen">
+        <img src="background/rock-intro.png" alt="Logo" class="logo">
+    </div>
+
+    <!-- Скрито съдържание, което ще се покаже след зареждане -->
+    <div class="hidden-content">
+        <!-- Горна част на сайта (HEADER) -->
+        <header>
+           
+            <img src="background/rock-3d.png" alt="Logo" class="header-logo">
+            <div class="button-container">
+                <button id="about-btn" class="main-button">ABOUT ROCK </button>
+                <button id="tokenomics-btn" class="main-button">TOKENOMICS</button>
+                <button id="roadmap-btn" class="main-button">ROADMAP</button>
+                <button id="buy-btn" class="main-button">ROCK DAO</button>
+            </div>
+            <div class="mobile-menu-icon" onclick="toggleMenu()">☰</div>
+        </header>
+        <div id="mobile-menu" class="mobile-menu">
+            <button id="about-btn-mobile" class="main-button mobile-menu-item">ABOUT ROCK</button>
+            <button id="tokenomics-btn-mobile" class="main-button mobile-menu-item">TOKENOMICS</button>
+            <button id="roadmap-btn-mobile" class="main-button mobile-menu-item">ROADMAP</button>
+            <button id="buy-btn-mobile" class="main-button mobile-menu-item">ROCK NFTs</button>
+            <button id="close-mobile-menu-btn" class="close-mobile-menu-btn">X</button>
+        </div>
+
+        <!-- Прозорци за модални прозорци -->
+        <div id="about-modal" class="modal">
+            <span class="close-btn" onclick="closeModal('about-modal', 'about-btn')">X</span>
+            <h2 class="modal-title">ABOUT $ROCK</h2>
+            <div class="modal-content">
+                <img src="background/about-rock.png" alt="About">
+            </div>
+        </div>
+
+        <div id="buy-modal" class="modal">
+            <span class="close-btn" onclick="closeModal('buy-modal', 'buy-btn')">X</span>
+            <h2 class="modal-title">ROCK DAO</h2>
+            <div class="modal-content">
+                <img src="background/soon-rock.png" alt="roadmap">
+            </div>
+        </div>
+
+        <div id="tokenomics-modal" class="modal">
+            <span class="close-btn" onclick="closeModal('tokenomics-modal', 'tokenomics-btn')">X</span>
+            <h2 class="modal-title">TOKENOMICS</h2>
+            <div class="modal-content">
+                <img src="background/tokenomic-rock.png" alt="tokeninfo">
+            </div>
+        </div>
+
+        <div id="roadmap-modal" class="modal">
+            <span class="close-btn" onclick="closeModal('roadmap-modal', 'roadmap-btn')">X</span>
+            <h2 class="modal-title">ROADMAP</h2>
+            <div class="modal-content">
+                <img src="background/roadmap-rock.png" alt="roadmap">
+            </div>
+        </div>
+
+        <div class="custom-small-buttons">
+            <!-- SOL -->
+            <!-- <a href="https://solscan.io/account/H6jKocWMbQV16eX5yPtAGG7gLZPJaHfhWE4WVMdbVEuM" class="custom-button" id="button4">
+                <img src="background/solscan.png" alt="Logo 4">
+                <span class="button-text">DEV WALLET</span>
+            </a> -->
+
+            <!-- PUMP -->
+            <!-- <a href="https://pump.fun/AJZTGahqXwg6tMTCdHf1VuHLjYyR94VWBLZyjiMLnCoH" class="custom-button" id="button1">
+                <img src="background/pumpfun.png" alt="Logo 1">
+                <span class="button-text">PUMP.FUN</span>
+            </a> -->
+
+            <!-- DEXSCREENER -->
+            <a href="https://dexscreener.com/base/0x535df42d8ef6fcca65eb9ba8b460849cccf50d6a" class="custom-button" id="button1">
+                <img src="background/DEXSCREENER.png" alt="Logo 1">
+                <span class="button-text">0x535df42d8ef6fcca65eb9ba8b460849cccf50d6a</span>
+            </a>
+            <!-- DONE -->
+            <!-- DONE -->
+            <!-- DONE -->
+            <a href="https://x.com/killzerobase" class="custom-button" id="button2">
+                <img src="background/twitter.png" alt="Logo 2">
+                <span class="button-text">TWITTER</span>
+            </a>
+            <!-- DONE -->
+            <a href="https://t.me/killzerochat" class="custom-button" id="button3">
+                <img src="background/telegram.png" alt="Logo 3">
+                <span class="button-text">TELEGRAM</span>
+            </a>
+        </div>
+        
+
+        <!-- Долна част на сайта (FOOTER) -->
+        <footer>
+            <!-- Променено поле за въвеждане с идентификатор "copy-field" -->
+            <input type="text" id="copy-field" value="ADDRESS" readonly="" onclick="copyText()">
+            <!-- Променена иконка за копиране -->
+            <img src="background/copy.webp" alt="Copy Icon" class="copy-icon" onclick="copyText()">
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+
+
+</body></html>
