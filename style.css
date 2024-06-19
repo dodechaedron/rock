@@ -22,7 +22,7 @@ body {
 body {
     margin: 0;
     padding: 0;
-    background: url('background/banner-rock.png') no-repeat center center fixed;
+    background: url('background/banner-rock-TON.png') no-repeat center center fixed;
     background-size: cover;
     overflow: hidden;
 }
@@ -139,7 +139,7 @@ header {
     opacity: 0; /* Първоначално текстът е скрит */
     font-size: 25px;
     font-family: "ROCKBASE", Arial, sans-serif; /* Шрифт */
-    color: black; /* Черен цвят на текста */
+    color: rgb(30, 56, 77); /* Черен цвят на текста */
     text-decoration: none; /* Без декорации като линк */
 }
 
