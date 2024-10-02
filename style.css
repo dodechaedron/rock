@@ -22,7 +22,7 @@ body {
 body {
     margin: 0;
     padding: 0;
-    background: url('background/banner-rock-TON.png') no-repeat center center fixed;
+    background: url('background/rocksui-banner-v2.png') no-repeat center center fixed;
     background-size: cover;
     overflow: hidden;
 }
